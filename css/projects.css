@@ -1,0 +1,862 @@
+/* =================================
+   KIARIE BUILDTECH SOLUTIONS
+   PROJECTS PAGE
+================================= */
+
+
+/* ---------- ROOT COLORS ---------- */
+
+:root {
+    --navy: #071A35;
+    --blue: #0057B8;
+    --orange: #F47B20;
+    --white: #FFFFFF;
+    --light: #F4F7FA;
+    --grey: #687386;
+    --dark: #172033;
+    --border: #E2E8F0;
+}
+
+
+/* ---------- RESET ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--dark);
+    background: var(--white);
+    line-height: 1.6;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+.container {
+    width: 90%;
+    max-width: 1180px;
+    margin: auto;
+}
+
+
+/* =================================
+   HEADER
+================================= */
+
+.header {
+    background: var(--navy);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+.nav-container {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+
+/* ---------- LOGO ---------- */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--white);
+}
+
+
+.logo img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+}
+
+
+.logo span {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+.logo small {
+    display: block;
+    color: var(--orange);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+
+/* ---------- NAVIGATION ---------- */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+
+.navbar a {
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 600;
+    padding: 30px 0;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--orange);
+}
+
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: var(--orange);
+    left: 0;
+    bottom: 22px;
+    transition: 0.3s ease;
+}
+
+
+.navbar a:hover::after,
+.navbar a.active::after {
+    width: 100%;
+}
+
+
+/* =================================
+   PROJECT HERO
+================================= */
+
+.project-hero {
+    min-height: 430px;
+
+    background:
+        linear-gradient(rgba(7, 26, 53, 0.78),
+            rgba(7, 26, 53, 0.88)),
+        url("../images/project-paving.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    padding: 80px 20px;
+}
+
+
+.hero-content {
+    max-width: 800px;
+    color: var(--white);
+}
+
+
+.hero-label,
+.section-label {
+    color: var(--orange);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+
+.hero-content h1 {
+    font-size: clamp(42px, 6vw, 68px);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+
+.hero-content p:not(.hero-label) {
+    max-width: 680px;
+    margin: auto;
+    color: #E5EAF1;
+    font-size: 18px;
+}
+
+
+/* =================================
+   INTRODUCTION
+================================= */
+
+.projects-intro {
+    padding: 85px 20px 55px;
+    text-align: center;
+}
+
+
+.projects-intro h2 {
+    color: var(--navy);
+    font-size: 38px;
+    margin-bottom: 18px;
+}
+
+
+.projects-intro p:not(.section-label) {
+    max-width: 760px;
+    margin: auto;
+    color: var(--grey);
+    font-size: 17px;
+}
+
+
+/* =================================
+   FEATURED PROJECT
+================================= */
+
+.featured-project {
+    background: var(--light);
+    padding: 70px 0 90px;
+}
+
+
+.project-card {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(7, 26, 53, 0.10);
+}
+
+
+/* ---------- PROJECT IMAGE ---------- */
+
+.project-image {
+    min-height: 520px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 520px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+
+.project-card:hover .project-image img {
+    transform: scale(1.04);
+}
+
+
+.project-tag {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    background: var(--orange);
+    color: var(--white);
+    padding: 9px 16px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* ---------- PROJECT DETAILS ---------- */
+
+.project-details {
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.project-details h2 {
+    color: var(--navy);
+    font-size: 35px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+
+.project-details>p:not(.section-label) {
+    color: var(--grey);
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+
+/* ---------- HIGHLIGHTS ---------- */
+
+.project-highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+
+.highlight {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.highlight span {
+    width: 25px;
+    height: 25px;
+    background: var(--orange);
+    color: var(--white);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+.highlight p {
+    color: var(--dark);
+    font-size: 14px;
+}
+
+
+/* =================================
+   APPROACH SECTION
+================================= */
+
+.approach-section {
+    padding: 90px 0;
+    background: var(--white);
+}
+
+
+.section-heading {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 50px;
+}
+
+
+.section-heading h2 {
+    color: var(--navy);
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+
+.section-heading>p:last-child {
+    color: var(--grey);
+    font-size: 16px;
+}
+
+
+/* ---------- APPROACH GRID ---------- */
+
+.approach-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+
+.approach-card {
+    padding: 30px 25px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+
+.approach-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--orange);
+    box-shadow: 0 12px 30px rgba(7, 26, 53, 0.09);
+}
+
+
+.approach-number {
+    color: var(--orange);
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+
+.approach-card h3 {
+    color: var(--navy);
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+
+.approach-card p {
+    color: var(--grey);
+    font-size: 14px;
+}
+
+
+/* =================================
+   CAPABILITIES
+================================= */
+
+.project-services {
+    padding: 20px 0 90px;
+}
+
+
+.services-box {
+    background: var(--navy);
+    color: var(--white);
+    border-radius: 12px;
+    padding: 55px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+}
+
+
+.services-box h2 {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+
+.services-box>div:first-child>p:last-child {
+    color: #C6D0DD;
+    max-width: 500px;
+}
+
+
+/* ---------- CAPABILITY LIST ---------- */
+
+.capabilities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+
+.capabilities span {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #E4EAF2;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 13px;
+    transition: 0.3s ease;
+}
+
+
+.capabilities span:hover {
+    background: var(--orange);
+    border-color: var(--orange);
+    color: var(--white);
+}
+
+
+/* =================================
+   CTA
+================================= */
+
+.project-cta {
+    padding: 0 0 90px;
+}
+
+
+.cta-box {
+    background: var(--light);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+
+.cta-box h2 {
+    color: var(--navy);
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+
+.cta-box p:not(.section-label) {
+    color: var(--grey);
+    max-width: 620px;
+}
+
+
+.cta-button {
+    display: inline-block;
+    background: var(--orange);
+    color: var(--white);
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: 0.3s ease;
+}
+
+
+.cta-button:hover {
+    background: var(--blue);
+    transform: translateY(-2px);
+}
+
+
+/* =================================
+   FOOTER
+================================= */
+
+.footer {
+    background: #041226;
+    color: var(--white);
+}
+
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+    padding: 55px 0;
+}
+
+
+/* ---------- FOOTER BRAND ---------- */
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+
+.footer-logo img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+
+.footer-logo strong {
+    display: block;
+    font-size: 17px;
+}
+
+
+.footer-logo small {
+    display: block;
+    color: var(--orange);
+}
+
+
+.footer-brand>p {
+    color: #AEB8C6;
+    max-width: 350px;
+}
+
+
+/* ---------- FOOTER LINKS ---------- */
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+.footer-links h3 {
+    color: var(--orange);
+    margin-bottom: 10px;
+}
+
+
+.footer-links a {
+    color: #C6CFDB;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+
+.footer-links a:hover {
+    color: var(--orange);
+    padding-left: 4px;
+}
+
+
+/* ---------- FOOTER BOTTOM ---------- */
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    padding: 20px;
+}
+
+
+.footer-bottom p {
+    color: #8D99AA;
+    font-size: 13px;
+}
+
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 1000px) {
+
+    .project-card {
+        grid-template-columns: 1fr;
+    }
+
+
+    .project-image,
+    .project-image img {
+        min-height: 430px;
+    }
+
+
+    .approach-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .services-box {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .navbar {
+        gap: 16px;
+    }
+
+
+    .navbar a {
+        font-size: 14px;
+    }
+
+
+    .project-details {
+        padding: 45px 30px;
+    }
+
+
+    .project-details h2 {
+        font-size: 30px;
+    }
+
+
+    .cta-box {
+        padding: 40px 30px;
+    }
+
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    /* HEADER */
+
+    .nav-container {
+        flex-direction: column;
+        padding: 15px 0;
+        gap: 12px;
+    }
+
+
+    .navbar {
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+
+    .navbar a {
+        padding: 5px 0;
+        font-size: 13px;
+    }
+
+
+    .navbar a::after {
+        bottom: -3px;
+    }
+
+
+    /* HERO */
+
+    .project-hero {
+        min-height: 350px;
+    }
+
+
+    .hero-content h1 {
+        font-size: 43px;
+    }
+
+
+    .hero-content p:not(.hero-label) {
+        font-size: 16px;
+    }
+
+
+    /* INTRO */
+
+    .projects-intro {
+        padding-top: 65px;
+    }
+
+
+    .projects-intro h2 {
+        font-size: 30px;
+    }
+
+
+    /* FEATURED PROJECT */
+
+    .project-image,
+    .project-image img {
+        min-height: 300px;
+    }
+
+
+    .project-details {
+        padding: 40px 25px;
+    }
+
+
+    .project-highlights {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* APPROACH */
+
+    .approach-section {
+        padding: 70px 0;
+    }
+
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+
+    .approach-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* CAPABILITIES */
+
+    .services-box {
+        padding: 35px 25px;
+    }
+
+
+    .services-box h2 {
+        font-size: 30px;
+    }
+
+
+    /* CTA */
+
+    .cta-box {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 35px 25px;
+    }
+
+
+    .cta-box h2 {
+        font-size: 28px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .logo span {
+        font-size: 16px;
+    }
+
+
+    .navbar {
+        gap: 10px;
+    }
+
+
+    .navbar a {
+        font-size: 12px;
+    }
+
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+
+    .project-details h2 {
+        font-size: 27px;
+    }
+
+}
